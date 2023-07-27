@@ -1,0 +1,80 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Build with GCC -g++ version 13.1.0",
+			"command": "C:\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"-std=c++20",
+				"${workspaceFolder}\\src\\/*.cpp",
+				"-o",
+				"${workspaceFolder}\\out\\rooster.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\mingw64\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "Build with clang++ version 13.0.0",
+			"command": "C:\\mingw64\\bin\\clang++.exe",
+			"args": [
+				"-std=c++20",
+				"-fdiagnostics-color=always",
+				"-Wall",
+				"-Wextra",
+				"-g",
+				"${workspaceFolder}\\src\\/*.cpp",
+				"-o",
+				"${workspaceFolder}\\out\\rooster.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: \"C:\\Program Files\\LLVM\\bin\\clang++.exe\""
+		},
+		{
+			"type": "cppbuild",
+			"label": "Build with MSVS cl.exe compiler",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/std:c++20",
+				"/MDd",
+				"/EHsc",
+				"/EHs",
+				"/EHa",
+				"/FAcs",
+				"/fp:precise",
+				//set the obj files optput path 
+				"/Fo:${workspaceFolder}\\out\\",
+				"${workspaceFolder}\\src\\/*.cpp",// input to create obj files
+				//set executable name & output path
+				"/Fe:",
+				"${workspaceFolder}\\out\\rooster",
+				"${workspaceFolder}\\out\\*.obj" //input to create executabal
+				//"${workspaceFolder}/*.cpp",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"detail": "compiler: cl.exe"
+		}
+	]
+}
